@@ -92,6 +92,8 @@
     .badge-site { background: rgba(29,158,117,0.15); color: #5dcaa5; border: 1px solid rgba(29,158,117,0.2); }
     .badge-ecom { background: rgba(239,159,39,0.15); color: #fac775; border: 1px solid rgba(239,159,39,0.2); }
     .badge-sys  { background: rgba(56,189,248,0.15); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.2); }
+    .badge-ia   { background: rgba(200,245,100,0.12); color: #c8f564; border: 1px solid rgba(200,245,100,0.25); }
+    html.light .badge-ia { background: rgba(140,180,30,0.12); color: #6d8c1a; border-color: rgba(140,180,30,0.3); }
     .proj-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
     /* STATUS BADGE */
@@ -339,7 +341,7 @@
           <span class="tag">C#</span>
           <span class="tag">Automação</span>
         </div>
-        <p class="header-metrics">7 projetos entregues · Rio de Janeiro, RJ · IA integrada</p>
+        <p class="header-metrics">8 projetos entregues · Rio de Janeiro, RJ · IA integrada</p>
       </div>
     </header>
 
@@ -361,6 +363,67 @@
         <div class="section-line"></div>
       </div>
       <div class="projects">
+
+        <div class="proj">
+          <div class="proj-top">
+            <p class="proj-name">CV Tailor</p>
+            <span class="proj-badge badge-ia">IA</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-info">
+              <p class="proj-desc">Ferramenta de IA que adapta o currículo a cada vaga: analisa o anúncio, calcula a compatibilidade e reescreve a experiência real do candidato com o Claude, gerando currículos otimizados para ATS e cartas de apresentação.</p>
+              <div class="proj-status status-internal"><span class="status-dot"></span>Em desenvolvimento</div>
+              <div class="proj-details">
+                <span class="proj-detail">Análise da vaga com cálculo de compatibilidade (match score) entre currículo e anúncio</span>
+                <span class="proj-detail">Reescrita dos bullets reais do CV com IA e verificação automática de ATS</span>
+                <span class="proj-detail">Exportação em PDF/DOCX, carta de apresentação e acompanhamento do status de cada candidatura</span>
+              </div>
+              <div class="proj-techs">
+                <span class="proj-tech">Next.js</span>
+                <span class="proj-tech">TypeScript</span>
+                <span class="proj-tech">Tailwind CSS v4</span>
+                <span class="proj-tech">Anthropic API</span>
+                <span class="proj-tech">Claude</span>
+                <span class="proj-tech">Neon</span>
+                <span class="proj-tech">PostgreSQL</span>
+                <span class="proj-tech">Vercel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <p class="proj-name">TatamePro</p>
+            <span class="proj-badge badge-saas">SaaS</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-info">
+              <p class="proj-desc">Plataforma de gestão para academias de jiu-jitsu: alunos, matrículas, planos, cobranças e pagamentos em um só lugar, com arquitetura pensada para escalar de academias individuais a redes e franquias.</p>
+              <div class="proj-status status-prod"><span class="status-dot"></span>Em produção</div>
+              <div class="proj-details">
+                <span class="proj-detail">Gestão de alunos, matrículas, planos e cobranças</span>
+                <span class="proj-detail">Automação diária de cobranças e avisos por e-mail (cron)</span>
+                <span class="proj-detail">Dashboard com métricas, insights e relatórios da academia</span>
+              </div>
+              <div class="proj-techs">
+                <span class="proj-tech">React</span>
+                <span class="proj-tech">TypeScript</span>
+                <span class="proj-tech">Node.js</span>
+                <span class="proj-tech">Express</span>
+                <span class="proj-tech">Drizzle ORM</span>
+                <span class="proj-tech">PostgreSQL</span>
+                <span class="proj-tech">Vercel</span>
+              </div>
+              <a class="proj-link" href="https://tatame-pro-app.vercel.app/" target="_blank">Ver projeto</a>
+            </div>
+            <a class="proj-preview-wrap" href="https://tatame-pro-app.vercel.app/" target="_blank" tabindex="-1">
+              <div class="iframe-placeholder"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+              <iframe data-src="https://tatame-pro-app.vercel.app/" scrolling="no" tabindex="-1"></iframe>
+              <div class="proj-preview-overlay"><span>Abrir ↗</span></div>
+            </a>
+          </div>
+        </div>
 
         <div class="proj">
           <div class="proj-top">
