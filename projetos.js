@@ -52,7 +52,7 @@ const PROJETOS = {
       "Plataforma de gestão para academias de jiu-jitsu: alunos, matrículas, planos e " +
       "cobranças, com automações diárias por e-mail, dashboard e insights. Arquitetura " +
       "multi-tenant pensada para escalar de academias individuais a redes e franquias.",
-    imagem: "assets/projetos/tatamepro.png",
+    imagem: "assets/projetos/tatamepro.svg",
     tecnologias: ["Next.js", "Turborepo", "PostgreSQL", "Multi-tenant", "Automação por e-mail", "Vercel"],
     link: "https://tatame-pro-app.vercel.app/",
   },
@@ -66,7 +66,7 @@ const PROJETOS = {
       "compatibilidade e reescreve a experiência real do candidato com o Claude, gerando " +
       "currículos otimizados para ATS, com exportação em PDF/DOCX, carta de apresentação e " +
       "acompanhamento das candidaturas.",
-    imagem: null, // deploy protegido — sem screenshot por enquanto
+    imagem: "assets/projetos/cvtailor.svg",
     tecnologias: ["Next.js", "Claude (IA)", "Neon (Postgres)", "ATS", "Export PDF/DOCX"],
     link: null, // em desenvolvimento
     status: "Em desenvolvimento",
