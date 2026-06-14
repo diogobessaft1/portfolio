@@ -57,18 +57,6 @@ const PROJETOS = {
     link: "https://tatame-pro-app.vercel.app/",
   },
 
-  clubedafonte: {
-    nome: "Clube da Fonte",
-    tags: ["WEB DEVELOPMENT", "SAAS"],
-    resumo: "Plataforma de ofertas de marketplaces para todo o Brasil.",
-    descricao:
-      "Plataforma de ofertas de produtos de marketplaces para usuários de todo o Brasil. " +
-      "Em constante atualização com novas funcionalidades.",
-    imagem: "assets/projetos/clubedafonte.png",
-    tecnologias: ["React", "Next.js", "Integrações de API", "Vercel"],
-    link: "https://clube-da-fonte.vercel.app/",
-  },
-
   cvtailor: {
     nome: "CV Tailor",
     tags: ["IA", "SAAS"],
