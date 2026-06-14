@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projeto — Diogo Bessa</title>
+<meta name="description" content="Detalhe de projeto — portfólio de Diogo Bessa." />
+<!-- evita flash de tema: aplica o tema salvo antes de pintar -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">@diogobessaft1</a>
+    <div class="nav-links">
+      <a href="index.html#projetos">Projetos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+      <button class="theme-btn" id="theme-btn" aria-label="Alternar tema" onclick="toggleTheme()">
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="detail" id="detail-root">
+  <!-- conteúdo injetado por projeto.js -->
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="foot-copy">© 2026 Diogo Bessa</span>
+    <div class="foot-links">
+      <a href="https://instagram.com/diogobessa.tech" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:diogo.bessa04@gmail.com">E-mail</a>
+    </div>
+  </div>
+</footer>
+
+<script src="projetos.js"></script>
+<script>
+  // ===== Tema (claro/escuro) =====
+  syncThemeIcon();
+  function toggleTheme() {
+    var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', cur);
+    try { localStorage.setItem('theme', cur); } catch (e) {}
+    syncThemeIcon();
+  }
+  function syncThemeIcon() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.getElementById('icon-sun').style.display = dark ? 'none' : 'block';
+    document.getElementById('icon-moon').style.display = dark ? 'block' : 'none';
+  }
+
+  // ===== Render do detalhe a partir do slug =====
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  (function renderProjeto() {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var root = document.getElementById('detail-root');
+    var p = slug && PROJETOS[slug];
+
+    if (!p) {
+      document.title = 'Projeto não encontrado — Diogo Bessa';
+      root.innerHTML =
+        '<a class="back-link" href="index.html#projetos">&larr; Voltar para Projetos</a>' +
+        '<div class="not-found">' +
+        '<h1>Projeto não encontrado</h1>' +
+        '<p>O projeto que você procura não existe ou foi movido.</p>' +
+        '<a class="btn btn-primary" href="index.html#projetos">Ver todos os projetos</a>' +
+        '</div>';
+      return;
+    }
+
+    document.title = p.nome + ' — Diogo Bessa';
+
+    var pills = p.tags.map(function (t) { return '<span class="pill">' + esc(t) + '</span>'; }).join('');
+    var techs = p.tecnologias.map(function (t) { return '<span class="tech-badge">' + esc(t) + '</span>'; }).join('');
+
+    var imagemHtml = p.imagem
+      ? '<div class="detail-img"><img src="' + esc(p.imagem) + '" alt="' + esc(p.nome) + '" /></div>'
+      : '<div class="detail-img placeholder">' + esc(p.status || 'EM BREVE').toUpperCase() + '</div>';
+
+    var linkBtn = p.link
+      ? '<a class="side-btn side-btn-primary" href="' + esc(p.link) + '" target="_blank" rel="noopener">Ver Site Online &#8599;</a>'
+      : '<span class="side-btn side-btn-primary disabled">' + esc(p.status || 'Em breve') + '</span>';
+
+    root.innerHTML =
+      '<a class="back-link" href="index.html#projetos">&larr; Voltar para Projetos</a>' +
+      '<div class="detail-grid">' +
+        '<div class="detail-main">' +
+          '<div class="pills">' + pills + '</div>' +
+          '<h1 class="detail-title">' + esc(p.nome) + '</h1>' +
+          '<p class="detail-desc">' + esc(p.descricao) + '</p>' +
+          imagemHtml +
+          '<section class="tech-section">' +
+            '<p class="tech-label">O que eu fiz</p>' +
+            '<h2 class="tech-title">Tecnologias</h2>' +
+            '<div class="tech-badges">' + techs + '</div>' +
+          '</section>' +
+        '</div>' +
+        '<aside class="sidebar">' +
+          '<div class="side-block">' +
+            '<p class="side-label">Project Link</p>' +
+            linkBtn +
+            '<div class="side-divider"></div>' +
+            '<p class="side-label">Interested?</p>' +
+            '<p class="side-text">Gostou do que viu? Vamos conversar sobre como construir algo parecido pra você.</p>' +
+            '<a class="side-btn side-btn-ghost" href="index.html#contato">Iniciar Projeto</a>' +
+          '</div>' +
+        '</aside>' +
+      '</div>';
+  })();
+</script>
+
+</body>
+</html>
