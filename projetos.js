@@ -54,7 +54,7 @@ const PROJETOS = {
       "multi-tenant pensada para escalar de academias individuais a redes e franquias.",
     imagem: "assets/projetos/tatamepro.png",
     tecnologias: ["Next.js", "Turborepo", "PostgreSQL", "Multi-tenant", "Automação por e-mail", "Vercel"],
-    link: "https://tatame-pro-app.vercel.app/",
+    link: "https://tatamepro.vercel.app/",
   },
 
   cvtailor: {
