@@ -21,8 +21,21 @@ const SOBRE = {
 
   experiences: [
     {
+      year: "2026",
+      dateRange: "Set 2026 — Atual",
+      company: "Farmanguinhos (Fiocruz)",
+      role: "Assistente Administrativo",
+      bullets: [
+        "Ponto focal de dados do setor, atuando como o único responsável por estruturar a esteira de relatórios e inteligência de negócios da área.",
+        "Criação e gerenciamento de dashboards interativos utilizando Power BI, Power Query e modelagem avançada em DAX.",
+        "Desenvolvimento de processos de ETL para extrair, limpar e processar grandes volumes de dados operacionais e logísticos diretamente do sistema SAP S/4HANA.",
+        "Mapeamento e acompanhamento estratégico de 4 frentes principais de indicadores da área: Indicadores Mensais, Custos Logísticos, Cadastro de Materiais e Indicadores Farmacêuticos."
+      ],
+      tech: ["Power BI", "Power Query", "DAX", "SAP S/4HANA", "ETL"]
+    },
+    {
       year: "2025",
-      dateRange: "Feb 2025 — Present",
+      dateRange: "Fev 2025 — Ago 2026",
       company: "Farmanguinhos (Fiocruz)",
       role: "Auxiliar Administrativo",
       bullets: [
