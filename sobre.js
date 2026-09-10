@@ -16,7 +16,7 @@ const SOBRE = {
       "Desenvolvedor full-stack com formação em Engenharia da Computação e Análise e Desenvolvimento de Sistemas, e experiência em desenvolvimento web, arquitetura de sistemas e design. Construo soluções de ponta a ponta, do planejamento técnico ao deploy em produção, com foco em performance, clareza e manutenibilidade.",
       "Movido por performance e experiência do usuário, crio soluções digitais que deixam um impacto duradouro."
     ],
-    photo: "TODO: caminho da foto (ex.: assets/sobre/retrato.jpg)"
+    photo: "assets/sobre/retrato.jpg"
   },
 
   experiences: [
