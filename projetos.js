@@ -57,6 +57,19 @@ const PROJETOS = {
     link: "https://tatamepro.vercel.app/",
   },
 
+  loloscloset: {
+    nome: "Lôlo's Closet",
+    tags: ["WEB DEVELOPMENT", "E-COMMERCE"],
+    resumo: "Boutique e e-commerce de moda feminina com catálogo e sacola.",
+    descricao:
+      "Boutique oficial e e-commerce de moda feminina premium, focado em alta " +
+      "conversão e experiência de compra fluida. Interface refinada com catálogo " +
+      "segmentado por coleções, carrinho interativo, contato direto e deploy contínuo na Vercel.",
+    imagem: "assets/projetos/lolos-closet.png",
+    tecnologias: ["React", "Tailwind CSS", "Vite", "E-commerce", "Design Responsivo", "Vercel"],
+    link: "https://lolos-closet.vercel.app/",
+  },
+
   cvtailor: {
     nome: "CV Tailor",
     tags: ["IA", "SAAS"],
@@ -72,3 +85,5 @@ const PROJETOS = {
     status: "Em desenvolvimento",
   },
 };
+
+PROJETOS["lolos-closet"] = PROJETOS.loloscloset;
